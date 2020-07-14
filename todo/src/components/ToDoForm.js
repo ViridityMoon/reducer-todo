@@ -11,7 +11,8 @@ function ToDoForm(props) {
     };
     const onSubmit = (evt) => {
       evt.preventDefault();
-      props.dispatch({type: 'ADD_TODO', payload: newToDo})
+      props.dispatch({type: 'ADD_TODO', payload: newToDo});
+      setNewToDo({toDoInput: ''});
     };
 
     return (
