@@ -6,7 +6,7 @@ const ToDo = (props) => {
   console.log(props);
   const completed = props.entry.completed ? "line-through black" : "none";
   const toggle = () => {
-    props.dispatch({type: 'TOGGLE_COMPLETED', payload: props.entry.toDo})
+    props.dispatch({type: 'TOGGLE_COMPLETED', payload: props.entry})
   };
 
   return (

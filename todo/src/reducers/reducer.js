@@ -7,7 +7,6 @@ export const initialState = [{
 export const reducer = (state, action) => {
     switch (action.type) {
         case 'ADD_TODO' :
-            console.log(action)
             const newToDo = {
                 item: action.payload.toDoInput,
                 completed: false,
@@ -15,8 +14,10 @@ export const reducer = (state, action) => {
             }
             return [...state, newToDo]
         case 'TOGGLE_COMPLETED' :
+            console.log(action)
+
             return state.map(item => {
-                return item.id === action.payload ? {...item, completed: !item.completed} : item;
+                return item.id === action.payload.id ? {...item, completed: !item.completed} : item;
             });
         default:
             return state;
